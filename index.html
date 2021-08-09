@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Nanaud - developer</title>
+	<link rel="stylesheet" href="des.css" media="screen" />
+    <link rel="icon" href="favicon.ico" />
+    
+    <script type="text/javascript">
+	
+	function getMousePosition(event)
+{
+	var e = event || window.event;
+	var scroll = new Array((document.documentElement && document.documentElement.scrollLeft) || window.pageXOffset || self.pageXOffset || document.body.scrollLeft,(document.documentElement && document.documentElement.scrollTop) || window.pageYOffset || self.pageYOffset || document.body.scrollTop);;
+	return new Array(e.clientX + scroll[0] - document.body.clientLeft,e.clientY + scroll[1] - document.body.clientTop);
+}
+
+	function rayures()
+	{
+		var nb_rayures = Math.floor((document.body.clientWidth/35)+3);
+		var contenu_div = "";
+		var color = "";
+		for (i=0;i<nb_rayures;i++)
+		{
+			if(i%2==0)
+				color = "#4f4f4f";//"#e9e8c9";
+			else
+				color = "#313131";
+			contenu_div=contenu_div+"<div id='test"+i+"' style='background-color:"+color+"; width:35px;height:"+document.body.clientHeight+"px;float:right;z-index:5;'></div>";
+		}
+		document.getElementById('background').innerHTML = contenu_div;
+	}
+	
+	function selection_cat(id)
+	{
+		switch(id)
+		{
+			case 1 :
+				document.getElementById("cat_1").style.textDecoration = "underline";
+				document.getElementById("cat_2").style.textDecoration = "none";
+				document.getElementById("cat_3").style.textDecoration = "none";
+				document.getElementById("cat_4").style.textDecoration = "none";
+				document.getElementById("cat_5").style.textDecoration = "none";
+				document.getElementById("elements").innerHTML = '<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onMouseOver="descr(1)"><img src="blog.png" alt="blog" title="blog"/></a><a href="https://arnaud.cool/" onMouseOver="descr(2)"><img src="crea.png" alt="creation" title="creation"/></a><a href="https://github.com/arnaud-engineer" onMouseOver="descr(3)"><img src="git.png" alt="github" title="github"/></a><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onMouseOver="descr(4)"><img src="facebook.png" alt="facebook" title="facebook"/></a><a href="https://twitter.com/nanaud" onMouseOver="descr(5)"><img src="t.png" alt="twitter" title="twitter"/></a><a href="http://fr.linkedin.com/in/nanaud/" onMouseOver="descr(7)"><img src="link.png" alt="linkedin" title="linkedin"/></a><a href="http://www.viadeo.com/profile/0021u4t5z7zbirv3/" onMouseOver="descr(8)"><img src="viad.png" alt="viadeo" title="viadeo"/></a><a href="https://arnaud.engineer" onMouseOver="descr(9)"><img src="moncv.png" alt="cv" title="cv"/></a><a href="mailto:contact@arnaud.engineer" onMouseOver="descr(10)"><img src="courriel.png" alt="mail" title="mail"/></a><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onMouseOver="descr(11)"><img src="sky.png" alt="skype" title="skype"/></a>';
+				break;
+			case 2 :
+				document.getElementById("cat_1").style.textDecoration = "none";
+				document.getElementById("cat_2").style.textDecoration = "underline";
+				document.getElementById("cat_3").style.textDecoration = "none";
+				document.getElementById("cat_4").style.textDecoration = "none";
+				document.getElementById("cat_5").style.textDecoration = "none";
+				document.getElementById("elements").innerHTML = '<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onMouseOver="descr(1)"><img src="blog.png" alt="blog" title="blog"/></a><a href="https://arnaud.cool/" onMouseOver="descr(2)"><img src="crea.png" alt="creation" title="creation"/></a><a href="https://github.com/arnaud-engineer" onMouseOver="descr(3)"><img src="git.png" alt="github" title="github"/></a>';
+				break; 
+			case 3 :
+				document.getElementById("cat_1").style.textDecoration = "none";
+				document.getElementById("cat_2").style.textDecoration = "none";
+				document.getElementById("cat_3").style.textDecoration = "underline";
+				document.getElementById("cat_4").style.textDecoration = "none";
+				document.getElementById("cat_5").style.textDecoration = "none";
+				document.getElementById("elements").innerHTML = '<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onMouseOver="descr(4)"><img src="facebook.png" alt="facebook" title="facebook"/></a><a href="https://twitter.com/nanaud" onMouseOver="descr(5)"><img src="t.png" alt="twitter" title="twitter"/></a>';
+				break;
+			case 4 :
+				document.getElementById("cat_1").style.textDecoration = "none";
+				document.getElementById("cat_2").style.textDecoration = "none";
+				document.getElementById("cat_3").style.textDecoration = "none";
+				document.getElementById("cat_4").style.textDecoration = "underline";
+				document.getElementById("cat_5").style.textDecoration = "none";
+				document.getElementById("elements").innerHTML = '<a href="http://fr.linkedin.com/in/nanaud/" onMouseOver="descr(7)"><img src="link.png" alt="linkedin" title="linkedin"/></a><a href="http://www.viadeo.com/profile/0021u4t5z7zbirv3/" onMouseOver="descr(8)"><img src="viad.png" alt="viadeo" title="viadeo"/></a><a href="https://arnaud.engineer" onMouseOver="descr(9)"><img src="moncv.png" alt="cv" title="cv"/></a>';
+				break;
+			case 5 :
+				document.getElementById("cat_1").style.textDecoration = "none";
+				document.getElementById("cat_2").style.textDecoration = "none";
+				document.getElementById("cat_3").style.textDecoration = "none";
+				document.getElementById("cat_4").style.textDecoration = "none";
+				document.getElementById("cat_5").style.textDecoration = "underline";
+				document.getElementById("elements").innerHTML = '<a href="mailto:contact@arnaud.engineer" onMouseOver="descr(10)"><img src="courriel.png" alt="mail" title="mail"/></a><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onMouseOver="descr(11)"><img src="sky.png" alt="skype" title="skype"/></a>';
+				break;
+			default :
+				alert("erreur : id inexistant");
+		}
+	}
+	
+	function descr(id)
+	{
+		switch(id)
+		{
+			case 1 :
+				document.getElementById("descr").innerHTML = "Blog";
+				break;
+			case 2 :
+				document.getElementById("descr").innerHTML = "Creations";
+				break;
+			case 3 :
+				document.getElementById("descr").innerHTML = "Github";
+				break;
+			case 4 :
+				document.getElementById("descr").innerHTML = "Facebook";
+				break;
+			case 5 :
+				document.getElementById("descr").innerHTML = "Twitter";
+				break;
+			case 6 :
+				document.getElementById("descr").innerHTML = "Google +";
+				break;
+			case 7 :
+				document.getElementById("descr").innerHTML = "Linkedin";
+				break;
+			case 8 :
+				document.getElementById("descr").innerHTML = "Viadeo";
+				break;
+			case 9 :
+				document.getElementById("descr").innerHTML = "Resume";
+				break;
+			case 10 :
+				document.getElementById("descr").innerHTML = "Send an e-mail";
+				break;
+			case 11 :
+				document.getElementById("descr").innerHTML = "Add on Skype";
+				break;
+			default :
+				alert('erreur : id inconnu');
+				break;
+		}
+	}
+	
+	</script>
+    
+</head>
+<body onmousemove="getMousePosition(event)">
+
+	<div id="background"></div>
+    
+    <div id="nom">
+    	<h1>Nanaud</h1>
+        <h2>developer - second year computing student
+        	<noscript style="color:red;font-size:25px;"><br/>if you activate javascript, you will have a cool paralaxe effect ;-)</noscript>
+        </h2>
+    </div>
+    
+    <div id="content">
+    	<h1><span id="cat_1" onMouseOver="selection_cat(1)">All</span> - <span id="cat_2" onMouseOver="selection_cat(2)">What I do</span> - <span id="cat_3" onMouseOver="selection_cat(3)">Social</span> - <span id="cat_4" onMouseOver="selection_cat(4)">Professionnal</span> - <span id="cat_5" onMouseOver="selection_cat(5)">Contact</span></h1>
+        
+        <div id="elements" onMouseOver="descr_test(0)"></div>
+        
+        <div id="descr"></div>
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+	document.body.onmousemove = function(event){
+		var mousePosition = getMousePosition(event);
+		document.getElementById('background').style.left = 0.03*mousePosition[0]+'px';
+	};
+	
+	window.onresize = rayures();
+	window.onload = rayures();
+	
+	window.onload = selection_cat(1);
+</script>
+</html>

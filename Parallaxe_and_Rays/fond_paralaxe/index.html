@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Mouse Move</title>
+	<link rel="stylesheet" href="design.css" media="screen" />
+    
+    <script type="text/javascript">
+	
+	function getMousePosition(event)
+{
+	var e = event || window.event;
+	var scroll = new Array((document.documentElement && document.documentElement.scrollLeft) || window.pageXOffset || self.pageXOffset || document.body.scrollLeft,(document.documentElement && document.documentElement.scrollTop) || window.pageYOffset || self.pageYOffset || document.body.scrollTop);;
+	return new Array(e.clientX + scroll[0] - document.body.clientLeft,e.clientY + scroll[1] - document.body.clientTop);
+}
+	//document.getElementById("background");
+	alert(document.body.clientWidth);
+	
+	</script>
+    
+</head>
+<body onmousemove="getMousePosition(event)">
+	<div id="background"></div>
+	<div id="img1"></div>
+</body>
+
+<script type="text/javascript">
+	document.body.onmousemove = function(event){
+		var mousePosition = getMousePosition(event);
+		document.getElementById('img1').style.left = 0.03*mousePosition[0]+'px';
+	};
+</script>
+</html>
